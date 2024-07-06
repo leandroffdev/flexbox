@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-grow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 4px;
+            margin-bottom: 4px;
+        }
+        .box {
+            line-height: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 100px;
+            flex-basis: 100;
+            text-align: center;
+        }
+        .container2 {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 4px;
+            width: 100%;
+        }
+        .box2 {
+            min-width: 100px;
+            line-height: 100px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+        .box:nth-child(8){
+            grid-column: span 2;
+        }
+       @media (max-width: 827px) {
+            .container2 {
+                grid-template-columns: repeat(7, 1fr);
+            }
+        }
+       @media (max-width: 723px) {
+            .container2 {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+       @media (max-width: 619px) {
+            .container2 {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+       @media (max-width: 515px) {
+            .container2 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+       @media (max-width: 411px) {
+            .container2 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        } 
+       @media (max-width: 307px) {
+            .container2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        } 
+        @media (max-width: 203px) {
+            .container2 {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+    </div>
+    <div class="container2">
+        <div class="box2">1</div>
+        <div class="box2">2</div>
+        <div class="box2">3</div>
+        <div class="box2">4</div>
+        <div class="box2">5</div>
+        <div class="box2">6</div>
+        <div class="box2">7</div>
+        <div class="box2">8</div>
+    </div>
+</body>
+</html>
